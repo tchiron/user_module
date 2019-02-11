@@ -1,0 +1,68 @@
+* {
+  margin: 3px;
+}
+
+header,
+header div {
+  display: flex;
+}
+
+header h1 {
+  margin: 20px 0;
+  margin-left: 50px;
+}
+
+header div {
+  margin: auto;
+  margin-left: 100px;
+  margin-bottom: 0;
+  padding-bottom: 6px;
+}
+
+section div {
+  width: 100%;
+}
+
+table {
+  margin: auto;
+  width: 90%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: rgb(240, 240, 240);
+}
+
+/* tbody tr:nth-child(even) {
+  background-color: rgb(240, 240, 240);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: lightgrey;
+} */
+
+tbody tr:hover {
+  background-color: rgb(90, 90, 90);
+  color: white;
+}
+
+th,
+td {
+  border: 1px solid rgb(220, 220, 220);
+  padding: 0.3rem;
+}
+
+form,
+ul {
+  margin-left: 400px;
+}
+
+li,
+#error_pseudo,
+#error_password {
+  color: red;
+}
+
+input {
+  margin: 5px;
+}

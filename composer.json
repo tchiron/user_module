@@ -1,0 +1,15 @@
+{
+    "name": "dell-optilex-3010/18-01-2019",
+    "description": "",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "model\\": "model/",
+            "dao\\": "dao/",
+            "itf\\": "interface/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}

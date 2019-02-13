@@ -8,6 +8,5 @@ if (!empty($_SESSION['user'])) {
     $user = new User;
     $user = $_SESSION['user'];
 } else {
-    $user = User::createNullObject();
-    $_SESSION['user'] = $user;
+    $_SESSION['user'] = $user = User::createNullObject();
 }

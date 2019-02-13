@@ -59,6 +59,7 @@ ul {
 
 li,
 #error_pseudo,
+#error_email,
 #error_password {
   color: red;
 }

@@ -7,7 +7,6 @@ use model\User;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $page = 'home';
-    include VIEW . '/index.php';
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // $pages = [
     //     'accueil' => 'home',
@@ -20,8 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ];
 
     $page = filter_input(INPUT_GET, 'page');
-
-    include VIEW . '/index.php';
-} else {
-    include VIEW . '/index.php';
 }
+
+include VIEW . '/base.php';

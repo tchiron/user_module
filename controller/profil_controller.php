@@ -62,4 +62,4 @@ if (!isset($error_messages['password']) && (empty($error_messages['pseudo']) || 
     $page = 'edit_profil';
 }
 
-include VIEW . '/index.php';
+include VIEW . '/base.php';

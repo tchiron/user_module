@@ -77,4 +77,4 @@ if (empty($error_messages)) {
     $page = 'signin';
 }
 
-include VIEW . '/index.php';
+include VIEW . '/base.php';

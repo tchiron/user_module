@@ -9,4 +9,4 @@ $user = User::createNullObject();
 $_SESSION['user'] = $user;
 
 $page = 'home';
-include VIEW . '/index.php';
+include VIEW . '/base.php';

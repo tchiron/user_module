@@ -3,7 +3,7 @@
         <?= $error_messages['log'] ?>
     </div>
 <?php endif; ?>
-<form action="/signin.php" method="post">
+<form action="/signin_controller.php" method="post">
     <label for="login">Login : </label>
     <input type="text" name="login" id="login">
     <span id="error_login"><?= (isset($error_messages['login'])) ? $error_messages['login'] : '' ; ?></span><br>

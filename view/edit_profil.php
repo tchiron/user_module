@@ -1,4 +1,4 @@
-<form action="/profil.php" method="post">
+<form action="/profil_controller.php" method="post">
     <label for="pseudo">Pseudo : </label>
     <input type="text" name="pseudo" id="pseudo" value="<?= (isset($pseudo)) ? $pseudo : $user->getPseudo(); ?>">
     <span id="error_pseudo"><?= (isset($error_messages['pseudo'])) ? $error_messages['pseudo'] : '' ; ?></span><br>

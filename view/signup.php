@@ -1,4 +1,4 @@
-<form action="/signup.php" method="post">
+<form action="/signup_controller.php" method="post">
     <label for="pseudo">Pseudo : </label>
     <input type="text" name="pseudo" id="pseudo">
     <span id="error_pseudo"><?= (isset($error_messages['pseudo'])) ? $error_messages['pseudo'] : '' ; ?></span><br>

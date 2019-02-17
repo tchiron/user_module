@@ -32,7 +32,7 @@ if (empty($signup_post['password'])) {
 
 if (empty($error_messages)) {
     $signup_user = new User();
-    $signup_user->setPseudo($signup_post['pseudo'])->setEmail($signup_post['email'])->setPassword($signup_post['password']);
+    $signup_user->setPseudo($signup_post['pseudo'])->setEmail($signup_post['email'])->setPassword(password_hash($signup_post['password'], PASSWORD_DEFAULT));
     
     try {
         $dao = new UserDao();

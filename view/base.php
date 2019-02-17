@@ -29,6 +29,10 @@
             case 'edit_profil':
                 include VIEW . '/edit_profil.php';
                 break;
+            
+            case 'edit_password':
+                include VIEW . '/edit_password.php';
+                break;
 
             case 'home':
             default:

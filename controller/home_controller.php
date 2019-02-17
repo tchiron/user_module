@@ -8,17 +8,7 @@ use model\User;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $page = 'home';
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // $pages = [
-    //     'accueil' => 'home',
-    //     'page2' => '2',
-    //     'page3' => '3',
-    //     'profil' => 'profil',
-    //     'deconnexion' => 'signout',
-    //     'senregistrer' => 'signup',
-    //     'connexion' => 'signin'
-    // ];
-
-    $page = filter_input(INPUT_GET, 'page');
+    $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_SPECIAL_CHARS);
 }
 
 include VIEW . '/base.php';

@@ -5,6 +5,7 @@ namespace dao;
 use model\User;
 use \PDO;
 use \PDOException;
+use phpDocumentor\Reflection\Types\Void_;
 
 class UserDao
 {
@@ -19,12 +20,11 @@ class UserDao
 
     public function addUser(User $user) : User
     {
-        $user->setPassword(password_hash($user->getPassword(), PASSWORD_DEFAULT));
-        $stmt = $this->pdo->prepare('INSERT INTO user(pseudo, email, password) VALUES (:pseudo, :email, :password)');
+        $stmt = $this->pdo->prepare('INSERT INTO user(pseudo, email, pwd) VALUES (:pseudo, :email, :pwd)');
         $stmt->execute([
             ':pseudo' => $user->getPseudo(),
             ':email' => $user->getEmail(),
-            ':password' => $user->getPassword()
+            ':pwd' => $user->getPassword()
         ]);
         return $user->setId($this->pdo->lastInsertId());
     }
@@ -38,7 +38,7 @@ class UserDao
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!empty($result)) {
             $identified_user = new User;
-            return $identified_user->setId($result['id'])->setPseudo($result['pseudo'])->setEmail($result['email'])->setPassword($result['password']);
+            return $identified_user->setId($result['id'])->setPseudo($result['pseudo'])->setEmail($result['email'])->setPassword($result['pwd']);
         } else {
             return User::createNullObject();
         }
@@ -53,7 +53,7 @@ class UserDao
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!empty($result)) {
             $identified_user = new User;
-            return $identified_user->setId($result['id'])->setPseudo($result['pseudo'])->setEmail($result['email'])->setPassword($result['password']);
+            return $identified_user->setId($result['id'])->setPseudo($result['pseudo'])->setEmail($result['email'])->setPassword($result['pwd']);
         } else {
             return User::createNullObject();
         }
@@ -68,7 +68,7 @@ class UserDao
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!empty($result)) {
             $existing_user = new User;
-            return $existing_user->setId($result['id'])->setPseudo($result['pseudo'])->setPassword($result['password']);
+            return $existing_user->setId($result['id'])->setPseudo($result['pseudo'])->setPassword($result['pwd']);
         } else {
             return User::createNullObject();
         }
@@ -80,6 +80,15 @@ class UserDao
         $stmt->execute([
             ':id' => $user->getId(),
             ':pseudo' => $user->getPseudo()
+        ]);
+    }
+
+    public function updatePassword(User $user) : void
+    {
+        $stmt = $this->pdo->prepare('UPDATE user SET pwd = :pwd WHERE id = :id');
+        $stmt->execute([
+            ':id' => $user->getId(),
+            ':pwd' => $user->getPassword()
         ]);
     }
 }

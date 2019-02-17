@@ -60,7 +60,10 @@ ul {
 li,
 #error_pseudo,
 #error_email,
-#error_password {
+#error_password,
+#error_old_password,
+#error_new_password,
+#error_confirm_password {
   color: red;
 }
 

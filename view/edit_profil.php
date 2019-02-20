@@ -1,9 +1,9 @@
 <form action="/profil_controller.php?form=profil" method="post">
     <label for="pseudo">Pseudo : </label>
-    <input type="text" name="pseudo" id="pseudo" value="<?= (isset($pseudo)) ? $pseudo : $user->getPseudo(); ?>">
+    <input type="text" name="pseudo" id="pseudo" value="<?= (isset($update_post['pseudo'])) ? $update_post['pseudo'] : $user->getPseudo(); ?>">
     <span id="error_pseudo"><?= (isset($error_messages['pseudo'])) ? $error_messages['pseudo'] : '' ; ?></span><br>
     <label for="email">Email : </label>
-    <input type="text" name="email" id="email" value="<?= (isset($email)) ? $email : $user->getEmail(); ?>">
+    <input type="text" name="email" id="email" value="<?= (isset($update_post['email'])) ? $update_post['email'] : $user->getEmail(); ?>">
     <span id="error_email"><?= (isset($error_messages['email'])) ? $error_messages['email'] : '' ; ?></span><br>
     <label for="password">Veuillez entrer votre mot de passe pour vérifier qu'il s'agit bien de votre compte :</label><br>
     <input type="password" name="password" id="password">

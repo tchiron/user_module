@@ -5,7 +5,7 @@
 <?php endif; ?>
 <form action="/signin_controller.php" method="post">
     <label for="login">Login : </label>
-    <input type="text" name="login" id="login">
+    <input type="text" name="login" id="login" value="<?= (isset($signin_post['login'])) ? $signin_post['login'] : "" ; ?>">
     <span id="error_login"><?= (isset($error_messages['login'])) ? $error_messages['login'] : '' ; ?></span><br>
     <label for="password">Mot de passe : </label>
     <input type="password" name="password" id="password">
